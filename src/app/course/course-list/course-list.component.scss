@@ -1,0 +1,18 @@
+.container {
+    padding-top: 15px;
+
+    .course-list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .started-courses {
+        padding: 10px;
+    }
+}

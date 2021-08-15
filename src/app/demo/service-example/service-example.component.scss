@@ -1,0 +1,18 @@
+.title {
+    margin-top: 20px;
+}
+
+.parent {
+    width: 100%;
+    min-height: 30px;
+    background-color: rgba(lightgray, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+
+    .child {
+        width: 100%;
+        min-height: 30px;
+        border: 1px solid rgba(black, 0.5);
+        border-radius: 5px;
+    }
+}

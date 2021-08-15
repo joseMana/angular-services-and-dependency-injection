@@ -1,0 +1,15 @@
+.child-component {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    min-height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .list-group {
+        min-width: 30%;
+    }
+}

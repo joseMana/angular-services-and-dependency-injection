@@ -1,0 +1,43 @@
+<!-- class property binding -->
+<div class="card" [class.active]="course?.hasStarted">
+    (Child component)
+    <!-- property binding example -->
+    <p class="text-center">
+        <img [src]="course?.imageUrl">
+    </p>
+    <p [title]="course?.title">
+        <!-- string interpolation example -->
+        <span class="card-label">Title:</span> {{ course?.title }}
+    </p>
+    <p>
+        <span class="card-label">Description:</span> {{ course?.description }}
+    </p>
+    <p>
+        <span class="card-label">Duration:</span> {{ course?.duration }} hrs
+    </p>
+    <p>
+        <span class="card-label">Price:</span> {{ course?.price }}
+        <!-- You can also do ternary operators in string interpolation -->
+        <strong><i>{{ course && course.price < 500 ? ' - Great deal!' : '' }}</i></strong>
+    </p>
+    <p *ngIf="course">
+        <!-- template reference variable example -->
+        <!-- Enter promo code: <input type="text" #inputRef (input)="0" /> {{ inputRef.value }} -->
+        
+        <!-- two way binding example using ngModel directive, need to import FormsModule in AppModule to use this -->
+        Enter promo code:
+        <input [(ngModel)]="course.promoCode" >
+        <br>
+        {{ course.promoCode }}
+    </p>
+    <p>
+        <!-- property and event binding example -->
+        <button class="btn btn-success"
+            [class.btn-success]="!course?.hasStarted"
+            [class.btn-danger]="course?.hasStarted"
+            [disabled]="!course?.isActive" 
+            (click)="startCourse($event)">
+            {{ course.hasStarted ? 'End Course' : 'Start Course' }}
+        </button>
+    </p>
+</div>

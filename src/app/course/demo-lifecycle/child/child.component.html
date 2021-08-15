@@ -1,0 +1,13 @@
+<span class="title-text" #titleText>Child Component</span>
+<div class="child-component">
+   
+    <div class="list-group" *ngIf="userList && userList.length > 0">
+        <a class="list-group-item list-group-item-action list-group-item-light"
+            *ngFor="let user of userList">{{user}}</a>
+    </div>
+    <div *ngIf="!(userList && userList.length > 0)">
+        No users
+    </div>
+
+    <ng-content></ng-content>
+</div>

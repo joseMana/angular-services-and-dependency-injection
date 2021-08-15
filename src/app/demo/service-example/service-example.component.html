@@ -1,0 +1,22 @@
+<div class="container">
+    <h4 class="title">Service and Dependency Injection</h4>
+    <hr>
+    <div class="parent">
+        <h5>Parent Component</h5>
+        <p>
+            <button class="btn btn-primary" (click)="onCountIncrement()">Increment Count</button>
+            &nbsp;
+            <button type="button" class="btn btn-success" (click)="onRefreshCount()">Refresh Count</button>
+            <br>
+            Current count from parent: <strong>{{ currentCount }}</strong>
+        </p>
+        <div class="child">
+            <app-service-child></app-service-child>
+        </div>
+        <br>
+        <div class="child">
+            (Child of parent component)
+            <app-service-grand-child></app-service-grand-child>
+        </div>
+    </div>
+</div>

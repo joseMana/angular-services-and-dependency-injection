@@ -1,0 +1,34 @@
+<div class="container">
+    <br>
+    <h5>Parent Component</h5>
+    <div class="toolbar">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">+</span>
+            </div>
+            <input
+                [(ngModel)]="userToAdd"
+                type="text" 
+                class="form-control" 
+                placeholder="Full name">
+            &nbsp;
+            <button type="text" class="btn btn-primary d-inline-block"
+                (click)="onAddUser()">Add User</button>
+            &nbsp;
+            <button type="text" class="btn btn-danger d-inline-block"
+                [ngClass]="{
+                    'btn-success': !isChildVisible,
+                    'btn-danger': isChildVisible
+                }"
+                (click)="isChildVisible=!isChildVisible">
+                {{ isChildVisible ? 'Hide Child' : 'Show Child' }}
+            </button>
+        </div>
+          
+    </div>
+    <br>
+    <app-child [userList]="userList" *ngIf="isChildVisible">
+        <!-- Example of content projection -->
+        <div>Content from parent <button>Example</button></div>
+    </app-child>
+</div>

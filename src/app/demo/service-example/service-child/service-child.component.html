@@ -1,0 +1,13 @@
+<div class="container">
+    <h6>Child Component</h6>
+    <p>
+        <button class="btn btn-primary" (click)="onCountIncrement()">Increment Count</button>
+        &nbsp;
+        <button type="button" class="btn btn-success" (click)="onRefreshCount()">Refresh Count</button>
+        <br>
+        Current count from child: <strong>{{ currentCount }}</strong>
+    </p>
+    <p class="grand-child">
+        <app-service-grand-child></app-service-grand-child>
+    </p>
+</div>

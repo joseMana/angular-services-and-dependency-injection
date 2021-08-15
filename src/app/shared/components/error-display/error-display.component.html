@@ -1,0 +1,46 @@
+<ng-container *ngIf="formControlElement
+            && formControlElement.invalid 
+            && formControlElement.touched">
+    <div class="invalid-feedback d-block">
+        <!-- Required error -->
+        <span *ngIf="formControlElement.errors.required">Field is required</span>
+
+        <!-- Invalid email -->
+        <span *ngIf="formControlElement.errors.email">Invalid email format</span>
+
+        <!-- Invalid date -->
+        <span *ngIf="formControlElement.errors.dateError">Invalid date</span>
+
+        <!-- Invalid date range -->
+        <span *ngIf="formControlElement.errors.dateRangeError">
+            Date not within range of {{formControlElement.errors.start | date: 'longDate'}} -
+            {{formControlElement.errors.end | date: 'longDate'}}
+        </span>
+
+        <!-- Minimum value error -->
+        <span *ngIf="formControlElement.errors.min">
+            Minimum value allowed is {{formControlElement.errors.min.min}}
+        </span>
+
+        <!-- Maxmimum value error -->
+        <span *ngIf="formControlElement.errors.max">
+            Maximum value allowed is {{formControlElement.errors.max.max}}
+        </span>
+
+        <!-- Minimim length error -->
+        <span *ngIf="formControlElement.errors.minlength">
+            Minimum length allowed is {{formControlElement.errors.minlength.requiredLength}}
+        </span>
+
+        <!-- Maximum length error -->
+        <span *ngIf="formControlElement.errors.maxlength">
+            Maximum length allowed is {{formControlElement.errors.maxlength.requiredLength}}
+        </span>
+
+        <!-- Custom error: Forbidden title -->
+        <span *ngIf="formControlElement.errors.forbiddenTitle">
+            Title provided is not allowed to use
+        </span>
+
+    </div>
+</ng-container>
